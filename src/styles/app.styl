@@ -1,0 +1,33 @@
+html
+  font-size: 16px
+
+body
+  font-family: $font-text--primary
+
+html, body
+  height: 100vh
+  background-color: $WHITE
+  overflow hidden
+
+#container, #app, #pages-container, #front-block, .page-a, .page-b
+  @extend .full
+  position fixed
+
+#app
+  -webkit-font-smoothing antialiased
+
+#front-block
+  z-index 9999999
+
+.page
+  @extend .full
+  display flex
+  flex-flow column nowrap
+  justify-content center
+  align-items center
+
+  .hero
+    text-align center
+
+  h1
+    font-size 500%

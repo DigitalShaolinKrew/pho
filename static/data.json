@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "id": "home",
+      "name": "Home",
+      "type": "HOME",
+      "path": "/"
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "type": "ABOUT",
+      "path": "/about"
+    }
+  ]
+}

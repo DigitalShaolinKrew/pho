@@ -1,0 +1,22 @@
+const AppConstants = {
+
+  RESOURCES_PROGRESS: 'RESOURCES_PROGRESS',
+  RESOURCES_READY: 'RESOURCES_READY',
+
+  PAGE_ASSETS_LOADED: 'PAGE_ASSETS_LOADED',
+  APP_START: 'APP_START',
+  FILL_APP_WITH_INITIAL_DATA: 'FILL_APP_WITH_INITIAL_DATA',
+
+  ENVIRONMENTS: {
+    DEV: 'http://localhost:3000/',
+    PROD: './'
+  },
+
+  PAGES: {
+    HOME: 'HOME',
+    ABOUT: 'ABOUT'
+  }
+
+}
+
+export default AppConstants

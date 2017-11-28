@@ -1,0 +1,40 @@
+.top-navigation
+  position fixed
+  z-index 2
+  top 0
+  left 0
+  display flex
+  flex-flow row nowrap
+  justify-content flex-end
+  align-items center
+  width 100%
+  height 50px
+  padding 0 $OVERALL_MARGIN
+  box-sizing border-box
+
+  +breakpoint(mobile)
+    justify-content center
+
+  &__link
+    text-decoration none
+    height 100%
+    line-height 50px
+    padding 0 $OVERALL_MARGIN
+    color $BLACK
+    position relative
+
+    &:after
+      content ''
+      position absolute
+      left $OVERALL_MARGIN
+      right $OVERALL_MARGIN
+      bottom 10px
+      height 5px
+      background-color $BLACK
+      transform scaleY( 0 )
+      transform-origin 50% 100%
+      transition transform 0.2s
+      will-change transform
+
+    &--active:after, &:hover:after
+      transform scaleY( 1 )
