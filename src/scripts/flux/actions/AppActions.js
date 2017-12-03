@@ -32,6 +32,18 @@ const AppActions = {
       type: AppConstants.APP_START,
       item: undefined
     } )
+  },
+  onScroll: ( scrollTop ) => {
+    Dispatcher.handleAppAction( {
+      type: AppConstants.ON_SCROLL,
+      item: scrollTop
+    } )
+  },
+  pageMutated: ( pageH ) => {
+    Dispatcher.handleAppAction( {
+      type: AppConstants.PAGE_MUTATED,
+      item: pageH
+    } )
   }
 }
 

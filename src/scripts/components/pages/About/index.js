@@ -1,5 +1,6 @@
 import React from 'react'
 import Page from 'Page'
+import AppActions from 'AppActions'
 
 export default class About extends Page {
   setupAnimations () {
@@ -11,12 +12,17 @@ export default class About extends Page {
   }
   render () {
     return (
-      <div className="page about">
+      <div className="page about" ref="parent">
         <div className="hero">
           <h1 ref="title">About</h1>
           <p ref="baseline">Hello from the About page!</p>
         </div>
       </div>
     )
+  }
+  componentDidMount () {
+    this.innerHeight = Math.floor( this.refs.parent.getBoundingClientRect().height )
+    setTimeout( AppActions.pageMutated, 0, this.innerHeight )
+    super.componentDidMount()
   }
 }

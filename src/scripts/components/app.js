@@ -1,13 +1,15 @@
 import 'Styles/app.styl'
 import React, { Component } from 'react'
-import InitialState from '../config/InitialState'
+import AppStore from 'AppStore'
+import Detector from '../config/Detector'
 import AssetsManager from '../helpers/AssetsManager'
 import AppTemplate from './template'
 
 export default class App extends Component {
   constructor () {
     super()
-    this.INITIAL_STATE = new InitialState()
+    Detector.testDevice()
+    AppStore.IS_MOBILE = Detector.isMobile()
     this.initLoader()
   }
   initLoader () {

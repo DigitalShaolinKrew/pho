@@ -1,7 +1,34 @@
 import { EventEmitter2 } from 'eventemitter2'
 import assign from 'object-assign'
 import Dispatcher from '../dispatcher'
+import WindowActions from 'WindowActions'
 import WindowConstants from 'WindowConstants'
+import { event } from 'dom-hand'
+
+// const onMouseMove = ( e ) => {
+//   const _mouse = { x: 0, y: 0, nX: 0, nY: 0 }
+//   _mouse.x = e.clientX || _mouse.x
+//   _mouse.y = e.clientY || _mouse.y
+//   _mouse.nX = ( _mouse.x / window.innerWidth ) * 2 - 1
+//   _mouse.nY = -( _mouse.y / window.innerHeight ) * 2 + 1
+//   WindowActions.onMouseMove( _mouse )
+// }
+
+// const onMouseUp = () => { WindowActions.onMouseUp() }
+// const onMouseDown = () => { WindowActions.onMouseDown() }
+// const onWindowBlur = () => { WindowActions.onWindowBlur() }
+// const onWindowFocus = () => { WindowActions.onWindowFocus() }
+
+const onWindowResize = () => {
+  WindowActions.onWindowResize( window.innerWidth, window.innerHeight )
+}
+
+event.on( window, 'resize', onWindowResize )
+// event.on( window, 'mousemove', this.onMouseMove )
+// event.on( window, 'mouseup', this.onMouseUp )
+// event.on( window, 'mousedown', this.onMouseDown )
+// event.on( window, 'blur', this.onWindowBlur )
+// event.on( window, 'focus', this.onWindowFocus )
 
 const WindowStore = assign( {}, EventEmitter2.prototype, {
   Size: { w: window.innerWidth, h: window.innerHeight },

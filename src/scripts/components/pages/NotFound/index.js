@@ -1,5 +1,6 @@
 import React from 'react'
 import Page from 'Page'
+import AppActions from 'AppActions'
 import './style.styl'
 
 export default class NotFound extends Page {
@@ -21,5 +22,10 @@ export default class NotFound extends Page {
         </div>
       </div>
     )
+  }
+  componentDidMount () {
+    this.innerHeight = Math.floor( this.refs.parent.getBoundingClientRect().height )
+    setTimeout( AppActions.pageMutated, 0, this.innerHeight )
+    super.componentDidMount()
   }
 }

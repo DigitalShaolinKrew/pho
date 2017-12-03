@@ -48,6 +48,7 @@ export default class Page extends BaseComponent {
     this.tlOut.eventCallback( 'onComplete', null )
     this.props.didTransitionOutComplete()
   }
+  update () {}
   resize () {}
   forceUnmount () {
     this.tlIn.pause( 0 )

@@ -19,6 +19,8 @@ module.exports = {
     PagerActions: path.resolve( __dirname, '..', 'src/scripts/flux/actions/PagerActions.js' ),
     BaseComponent: path.resolve( __dirname, '..', 'src/scripts/components/utils/BaseComponent.js' ),
     Page: path.resolve( __dirname, '..', 'src/scripts/components/utils/Page.js' ),
+    Img: path.resolve( __dirname, '..', 'src/scripts/components/utils/Img.js' ),
+    ParallaxWrapper: path.resolve( __dirname, '..', 'src/scripts/components/utils/ParallaxWrapper.js' ),
     Styles: path.resolve( __dirname, '..', 'src/styles/' )
   },
   htmlWebpackPlugin: new HtmlWebpackPlugin( {
